@@ -63,45 +63,77 @@ body {
   .section-pad { padding-top: 6rem; padding-bottom: 6rem; }
 }
 
-/* Shared pill base — apply to all button variants */
+/* ── Button base (shared across all variants) ─────────────────────── */
 .btn-pill,
-.btn-primary,
-.btn-outline,
+.btn-gradient,
+.btn-glass,
 .btn-outline-white {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.5rem;
-  padding: 0.75rem 1.5rem;
+  padding: 0.8rem 1.75rem;
   border-radius: 100px;
-  font-weight: 500;
-  transition: all 0.2s ease;
+  font-weight: 600;
+  font-size: 0.9375rem;
+  letter-spacing: -0.01em;
+  transition: all 0.22s ease;
   cursor: pointer;
   text-decoration: none;
   line-height: 1;
   white-space: nowrap;
+  border: none;
 }
 
-.btn-primary {
-  background-color: #2563EB;
+/* ── Gradient primary ─── blue → teal with glow ────────────────────── */
+.btn-gradient {
+  background: linear-gradient(135deg, #2563EB 0%, #0EA5E9 50%, #10B981 100%);
   color: white;
-  border: 2px solid #2563EB;
+  box-shadow: 0 4px 20px rgba(37, 99, 235, 0.4);
 }
-.btn-primary:hover  { background-color: #1D4ED8; border-color: #1D4ED8; }
-.btn-primary:active { transform: scale(0.95); }
+.btn-gradient:hover {
+  box-shadow: 0 6px 28px rgba(37, 99, 235, 0.6);
+  transform: translateY(-2px) scale(1.02);
+}
+.btn-gradient:active { transform: scale(0.97); box-shadow: none; }
 
-.btn-outline {
-  border: 2px solid #2563EB;
+/* ── Glass secondary ─── frosted on dark backgrounds ───────────────── */
+.btn-glass {
+  background: rgba(255, 255, 255, 0.08);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+.btn-glass:hover {
+  background: rgba(255, 255, 255, 0.16);
+  border-color: rgba(255, 255, 255, 0.45);
+  transform: translateY(-1px);
+}
+.btn-glass:active { transform: scale(0.97); }
+
+/* ── White ─── for use on solid-colour backgrounds (e.g. blue banner) ── */
+.btn-white-cta {
+  background: white;
   color: #2563EB;
-  background: transparent;
+  border: none;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.15);
 }
-.btn-outline:hover  { background-color: #2563EB; color: white; }
-.btn-outline:active { transform: scale(0.95); }
+.btn-white-cta:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+.btn-white-cta:active { transform: scale(0.97); }
 
+/* ── Outline white ─── for solid-colour CTA banners ────────────────── */
 .btn-outline-white {
-  border: 2px solid white;
-  color: white;
   background: transparent;
+  color: white;
+  border: 2px solid rgba(255, 255, 255, 0.7);
 }
-.btn-outline-white:hover  { background-color: white; color: #2563EB; }
-.btn-outline-white:active { transform: scale(0.95); }
+.btn-outline-white:hover {
+  background: white;
+  color: #2563EB;
+  border-color: white;
+}
+.btn-outline-white:active { transform: scale(0.97); }

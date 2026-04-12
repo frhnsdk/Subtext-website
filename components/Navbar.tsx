@@ -37,7 +37,9 @@ export default function Navbar() {
             <li key={link.href}>
               <a
                 href={link.href}
-                className="text-sm font-medium text-gray-700 hover:text-brand-blue transition-colors"
+                className={`text-sm font-medium transition-colors ${
+                  scrolled ? 'text-gray-700 hover:text-brand-blue' : 'text-gray-300 hover:text-white'
+                }`}
               >
                 {link.label}
               </a>
@@ -46,7 +48,11 @@ export default function Navbar() {
         </ul>
 
         {/* Desktop CTA */}
-        <a href="#cta" className="hidden md:inline-flex btn-primary text-sm py-2 px-5">
+        <a
+          href="#cta"
+          className="hidden md:inline-flex btn-gradient"
+          style={{ padding: '0.5rem 1.25rem', fontSize: '0.875rem' }}
+        >
           Get the App
         </a>
 

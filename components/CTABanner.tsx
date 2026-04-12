@@ -25,17 +25,11 @@ export default function CTABanner() {
           Join the people who believe their conversations are their own business.
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a
-            href="#"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[100px] bg-white text-brand-blue font-semibold hover:bg-blue-50 active:scale-95 transition-all duration-200 text-base"
-          >
+          <a href="#" className="btn-white-cta">
             <Download size={18} />
             Get Subtext for Android
           </a>
-          <a
-            href="#"
-            className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-[100px] border-2 border-white text-white font-semibold hover:bg-white/10 active:scale-95 transition-all duration-200 text-base"
-          >
+          <a href="#" className="btn-glass">
             <Globe size={18} />
             Open Web App
           </a>

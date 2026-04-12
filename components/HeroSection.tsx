@@ -49,11 +49,11 @@ export default function HeroSection() {
 
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
-          <a href="#" className="btn-primary text-base">
+          <a href="#" className="btn-gradient">
             <Download size={18} />
             Download for Android
           </a>
-          <a href="#" className="btn-outline-white text-base">
+          <a href="#" className="btn-glass">
             <Globe size={18} />
             Try on Web
           </a>

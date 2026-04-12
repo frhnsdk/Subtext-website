@@ -13,61 +13,89 @@ const trustPoints = [
     icon: ShieldCheck,
     title: 'On-Device Encryption',
     description: 'Messages are encrypted before they leave your device using X25519 + AES-GCM 256-bit. The server only ever sees ciphertext.',
+    color: '#3B82F6',
   },
   {
     icon: HardDrive,
     title: 'Spaces Stay Local',
-    description: "Space passwords are hashed and compared on-device only. Your hidden conversations never touch our servers.",
+    description: 'Space passwords are hashed and compared on-device only. Your hidden conversations never touch our servers.',
+    color: '#10B981',
   },
   {
     icon: EyeOff,
     title: 'Go Invisible',
-    description: "Hide your online status anytime with a single toggle. No one knows when you're around unless you choose to share.",
+    description: 'Hide your online status anytime. No one knows when you\'re around unless you choose to share.',
+    color: '#A78BFA',
   },
   {
     icon: Ban,
     title: 'Block & Mute',
-    description: "Silence anyone, anytime. Your block list and mute settings are fully in your hands — no questions asked.",
+    description: 'Silence anyone, anytime. Your block list and mute settings are fully in your hands — no questions asked.',
+    color: '#F472B6',
   },
 ]
 
 export default function PrivacySection() {
   return (
-    <section id="privacy" className="section-pad bg-brand-dark overflow-hidden">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Header */}
-        <div className="text-center mb-12 md:mb-16">
+    <section id="privacy" className="relative bg-brand-dark overflow-hidden" style={{ minHeight: '100vh' }}>
+
+      {/* ── Full-bleed 3D background ── */}
+      <div className="absolute inset-0">
+        <PrivacyScene />
+      </div>
+
+      {/* ── Gradient vignette so edges fade into dark ── */}
+      <div
+        className="absolute inset-0 pointer-events-none"
+        style={{
+          background: `
+            radial-gradient(ellipse 60% 50% at 50% 50%, transparent 30%, #0F172A 100%),
+            linear-gradient(to bottom, #0F172A 0%, transparent 15%, transparent 85%, #0F172A 100%)
+          `,
+        }}
+      />
+
+      {/* ── Content ── */}
+      <div className="relative z-10 max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-24 lg:py-32 flex flex-col items-center">
+
+        {/* Heading */}
+        <div className="text-center mb-16 lg:mb-20">
           <span className="text-xs font-bold tracking-widest uppercase text-brand-green">Privacy</span>
-          <h2 className="mt-3 text-3xl sm:text-4xl font-bold text-white">
+          <h2 className="mt-3 text-4xl sm:text-5xl font-bold text-white leading-tight">
             Your conversations{' '}
             <span className="gradient-text">stay yours.</span>
           </h2>
-          <p className="mt-4 text-lg text-gray-400 max-w-xl mx-auto">
-            Privacy isn&apos;t a feature. It&apos;s the foundation. Here&apos;s exactly how we protect you.
+          <p className="mt-4 text-lg text-gray-400 max-w-lg mx-auto">
+            Privacy isn&apos;t a feature. It&apos;s the foundation.
           </p>
         </div>
 
-        {/* Two-col layout: 3D left, trust points right */}
-        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
-          {/* 3D canvas — hidden on mobile for perf */}
-          <div className="w-full lg:w-1/2 h-72 sm:h-96 lg:h-[500px] hidden sm:block">
-            <PrivacyScene />
-          </div>
-
-          {/* Trust points */}
-          <div className="w-full lg:w-1/2 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
-            {trustPoints.map((point) => (
-              <div key={point.title} className="flex gap-4">
-                <div className="flex-shrink-0 w-11 h-11 rounded-xl bg-brand-blue/20 flex items-center justify-center text-brand-blue">
-                  <point.icon size={22} strokeWidth={1.8} />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-white mb-1">{point.title}</h3>
-                  <p className="text-sm text-gray-400 leading-relaxed">{point.description}</p>
-                </div>
+        {/* Trust point cards — glass, 2×2 grid */}
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-5 w-full max-w-3xl">
+          {trustPoints.map((point) => (
+            <div
+              key={point.title}
+              className="group flex gap-4 rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:border-white/25 hover:-translate-y-0.5"
+              style={{
+                background: 'rgba(15, 23, 42, 0.6)',
+                backdropFilter: 'blur(16px)',
+                WebkitBackdropFilter: 'blur(16px)',
+              }}
+            >
+              {/* Icon */}
+              <div
+                className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                style={{ background: `${point.color}22`, color: point.color }}
+              >
+                <point.icon size={22} strokeWidth={1.8} />
               </div>
-            ))}
-          </div>
+              {/* Text */}
+              <div>
+                <h3 className="font-semibold text-white mb-1 text-sm">{point.title}</h3>
+                <p className="text-sm text-gray-400 leading-relaxed">{point.description}</p>
+              </div>
+            </div>
+          ))}
         </div>
       </div>
     </section>
