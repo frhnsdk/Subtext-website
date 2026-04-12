@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
 import { Download, Globe } from 'lucide-react'
 
 const HeroScene = dynamic(() => import('./HeroScene'), {
@@ -19,68 +18,62 @@ export default function HeroSection() {
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
-          background: 'radial-gradient(ellipse 70% 60% at 60% 40%, rgba(37,99,235,0.18) 0%, transparent 70%)',
+          background: 'radial-gradient(ellipse 80% 70% at 50% 40%, rgba(37,99,235,0.2) 0%, transparent 70%)',
         }}
       />
 
       {/* 3D Scene — hidden on very small screens for perf */}
       <div className="absolute inset-0 hidden sm:block">
-        <Suspense fallback={null}>
-          <HeroScene />
-        </Suspense>
+        <HeroScene />
       </div>
 
-      {/* Content */}
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-20 pb-16 flex flex-col items-center text-center lg:items-start lg:text-left lg:flex-row lg:gap-16">
-        <div className="flex-1 max-w-2xl">
-          {/* Badge */}
-          <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/20 text-blue-300 border border-blue-500/30 mb-6">
-            <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
-            End-to-End Encrypted
-          </span>
+      {/* Content — centered */}
+      <div className="relative z-10 w-full max-w-4xl mx-auto px-6 sm:px-8 pt-28 pb-20 flex flex-col items-center text-center">
 
-          {/* Headline */}
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
-            Say it privately.{' '}
-            <span className="gradient-text">Say it clearly.</span>
-          </h1>
+        {/* Badge */}
+        <span className="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold bg-brand-blue/20 text-blue-300 border border-blue-500/30 mb-8">
+          <span className="w-1.5 h-1.5 rounded-full bg-brand-green animate-pulse" />
+          End-to-End Encrypted
+        </span>
 
-          {/* Subheadline */}
-          <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-xl">
-            End-to-end encrypted chats, password-protected Spaces, and real-time messaging — all in one app. Your conversations, your rules.
-          </p>
+        {/* Headline */}
+        <h1 className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white leading-[1.1] tracking-tight mb-6">
+          Say it privately.{' '}
+          <span className="gradient-text">Say it clearly.</span>
+        </h1>
 
-          {/* CTAs */}
-          <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
-            <a href="#" className="btn-primary gap-2 text-base">
-              <Download size={18} />
-              Download for Android
-            </a>
-            <a href="#" className="btn-outline-white gap-2 text-base">
-              <Globe size={18} />
-              Try on Web
-            </a>
-          </div>
+        {/* Subheadline */}
+        <p className="text-lg sm:text-xl text-gray-300 leading-relaxed mb-10 max-w-2xl">
+          End-to-end encrypted chats, password-protected Spaces, and real-time messaging — all in one app. Your conversations, your rules.
+        </p>
 
-          {/* Social proof row */}
-          <div className="mt-10 flex items-center gap-6 justify-center lg:justify-start text-sm text-gray-400">
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-brand-green" />
-              Real-time messaging
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-brand-blue" />
-              X25519 + AES-GCM
-            </span>
-            <span className="flex items-center gap-1.5">
-              <span className="w-2 h-2 rounded-full bg-purple-400" />
-              Android · iOS · Web
-            </span>
-          </div>
+        {/* CTAs */}
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <a href="#" className="btn-primary text-base">
+            <Download size={18} />
+            Download for Android
+          </a>
+          <a href="#" className="btn-outline-white text-base">
+            <Globe size={18} />
+            Try on Web
+          </a>
         </div>
 
-        {/* Right side spacer so text sits left on desktop */}
-        <div className="flex-1 hidden lg:block" />
+        {/* Social proof row */}
+        <div className="mt-10 flex flex-wrap items-center gap-x-6 gap-y-3 justify-center text-sm text-gray-400">
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-brand-green flex-shrink-0" />
+            Real-time messaging
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-brand-blue flex-shrink-0" />
+            X25519 + AES-GCM
+          </span>
+          <span className="flex items-center gap-1.5">
+            <span className="w-2 h-2 rounded-full bg-purple-400 flex-shrink-0" />
+            Android · iOS · Web
+          </span>
+        </div>
       </div>
 
       {/* Scroll indicator */}

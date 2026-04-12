@@ -1,7 +1,6 @@
 'use client'
 
 import dynamic from 'next/dynamic'
-import { Suspense } from 'react'
 import { ShieldCheck, HardDrive, EyeOff, Ban } from 'lucide-react'
 
 const PrivacyScene = dynamic(() => import('./PrivacyScene'), {
@@ -52,9 +51,7 @@ export default function PrivacySection() {
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-16">
           {/* 3D canvas — hidden on mobile for perf */}
           <div className="w-full lg:w-1/2 h-72 sm:h-96 lg:h-[500px] hidden sm:block">
-            <Suspense fallback={null}>
-              <PrivacyScene />
-            </Suspense>
+            <PrivacyScene />
           </div>
 
           {/* Trust points */}
