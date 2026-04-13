@@ -12,6 +12,11 @@ export const metadata: Metadata = {
   title: 'subtext — Private Messaging',
   description: 'Infinity Space keeps private chats password-locked, locally controlled, and end-to-end encrypted. Your conversations, your rules.',
   keywords: ['private messaging', 'end-to-end encryption', 'secure chat', 'subtext'],
+  icons: {
+    icon: '/logo.png',
+    shortcut: '/logo.png',
+    apple: '/logo.png',
+  },
   openGraph: {
     title: 'subtext — Private Messaging',
     description: 'Messaging that keeps your secrets.',
