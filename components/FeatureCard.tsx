@@ -17,8 +17,8 @@ export default function FeatureCard({
 }: FeatureCardProps) {
   return (
     <div
-      className="group bg-white rounded-2xl p-6 border border-gray-100 transition-all duration-300 hover:-translate-y-1.5 hover:border-gray-200"
-      style={{ boxShadow: '0 2px 8px rgba(0,0,0,0.05), 0 8px 24px rgba(0,0,0,0.06)' }}
+      className="group bg-brand-dark-card rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-blue/40"
+      style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.28)' }}
     >
       {/* Icon container */}
       <div
@@ -28,8 +28,8 @@ export default function FeatureCard({
         <Icon size={22} strokeWidth={1.8} />
       </div>
 
-      <h3 className="text-base font-semibold text-gray-900 mb-2">{title}</h3>
-      <p className="text-sm text-gray-500 leading-relaxed">{description}</p>
+      <h3 className="text-base font-semibold text-white mb-2">{title}</h3>
+      <p className="text-sm text-gray-300 leading-relaxed">{description}</p>
     </div>
   )
 }

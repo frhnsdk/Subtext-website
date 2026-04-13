@@ -10,7 +10,7 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: 'subtext — Private Messaging',
-  description: 'End-to-end encrypted chats, password-protected Spaces, and real-time messaging. Your conversations, your rules.',
+  description: 'Infinity Space keeps private chats password-locked, locally controlled, and end-to-end encrypted. Your conversations, your rules.',
   keywords: ['private messaging', 'end-to-end encryption', 'secure chat', 'subtext'],
   openGraph: {
     title: 'subtext — Private Messaging',
@@ -25,8 +25,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>{children}</body>
+    <html lang="en" className={inter.variable} suppressHydrationWarning>
+      <body suppressHydrationWarning>{children}</body>
     </html>
   )
 }

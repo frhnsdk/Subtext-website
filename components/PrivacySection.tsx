@@ -17,8 +17,8 @@ const trustPoints = [
   },
   {
     icon: HardDrive,
-    title: 'Spaces Stay Local',
-    description: 'Space passwords are hashed and compared on-device only. Your hidden conversations never touch our servers.',
+    title: 'Infinity Space Stays Local',
+    description: 'Infinity Space passwords are hashed and verified on-device only. Your hidden conversations never touch our servers.',
     color: '#10B981',
   },
   {
@@ -66,7 +66,7 @@ export default function PrivacySection() {
             <span className="gradient-text">stay yours.</span>
           </h2>
           <p className="mt-4 text-lg text-gray-400 max-w-lg mx-auto">
-            Privacy isn&apos;t a feature. It&apos;s the foundation.
+            Infinity Space keeps your most sensitive chats locked behind local passwords and fully under your control.
           </p>
         </div>
 
@@ -84,7 +84,7 @@ export default function PrivacySection() {
             >
               {/* Icon */}
               <div
-                className="flex-shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
+                className="shrink-0 w-11 h-11 rounded-xl flex items-center justify-center transition-transform duration-300 group-hover:scale-110"
                 style={{ background: `${point.color}22`, color: point.color }}
               >
                 <point.icon size={22} strokeWidth={1.8} />
