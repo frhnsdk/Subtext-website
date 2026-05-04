@@ -6,48 +6,33 @@ import { ChevronLeft, ChevronRight } from 'lucide-react'
 const previews = [
   {
     id: 1,
-    src: '/App Screenshot/6298335807923753193.jpg',
+    src: '/App Screenshot/Screenshot 2026-05-03 221808.png',
     alt: 'App preview 1',
   },
   {
     id: 2,
-    src: '/App Screenshot/6298335807923753196.jpg',
+    src: '/App Screenshot/Screenshot 2026-05-03 221935.png',
     alt: 'App preview 2',
   },
   {
     id: 3,
-    src: '/App Screenshot/6298335807923753197.jpg',
+    src: '/App Screenshot/Screenshot 2026-05-03 222102.png',
     alt: 'App preview 3',
   },
   {
     id: 4,
-    src: '/App Screenshot/6298335807923753199.jpg',
+    src: '/App Screenshot/Screenshot 2026-05-03 222239.png',
     alt: 'App preview 4',
   },
   {
     id: 5,
-    src: '/App Screenshot/6298335807923753265.jpg',
+    src: '/App Screenshot/Screenshot 2026-05-03 222321.png',
     alt: 'App preview 5',
   },
   {
     id: 6,
-    src: '/App Screenshot/Screenshot_20260118-221825.png',
-    alt: 'App preview - Chat interface',
-  },
-  {
-    id: 7,
-    src: '/App Screenshot/Screenshot_20260118-221830.png',
-    alt: 'App preview - Messages view',
-  },
-  {
-    id: 8,
-    src: '/App Screenshot/Screenshot_20260118-221934.png',
-    alt: 'App preview - Full app showcase',
-  },
-  {
-    id: 9,
-    src: '/App Screenshot/Screenshot_20260118-223451.png',
-    alt: 'App preview 9',
+    src: '/App Screenshot/Screenshot 2026-05-03 222428.png',
+    alt: 'App preview 6',
   },
 ]
 
