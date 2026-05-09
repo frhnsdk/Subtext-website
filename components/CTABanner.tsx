@@ -1,37 +1,86 @@
-import { Download } from 'lucide-react'
+import { Download, ArrowRight } from 'lucide-react'
+import Reveal from './Reveal'
 
 const apkDownloadHref = process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL || '#'
 
 export default function CTABanner() {
   return (
-    <section id="cta" className="py-20 bg-brand-blue relative overflow-hidden">
-      {/* Subtle dot pattern */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-10"
-        style={{
-          backgroundImage: 'radial-gradient(circle, white 1px, transparent 1px)',
-          backgroundSize: '40px 40px',
-        }}
-      />
-      {/* Radial glow top-right */}
-      <div
-        className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(255,255,255,0.12) 0%, transparent 70%)', transform: 'translate(30%, -30%)' }}
-      />
+    <section id="cta" className="bg-white py-20 md:py-28">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <Reveal>
+          <div
+            className="relative rounded-[2.5rem] overflow-hidden p-10 sm:p-14 lg:p-20 text-center"
+            style={{
+              background:
+                'linear-gradient(135deg, #1D4ED8 0%, #2563EB 40%, #3B82F6 100%)',
+              boxShadow: '0 40px 80px -20px rgba(37,99,235,0.5)',
+            }}
+          >
+            {/* Pattern */}
+            <div
+              className="absolute inset-0 pointer-events-none opacity-15"
+              style={{
+                backgroundImage:
+                  'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
+                backgroundSize: '36px 36px',
+              }}
+            />
+            {/* Glow corners */}
+            <div
+              className="absolute top-0 right-0 w-96 h-96 rounded-full pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(circle, rgba(255,255,255,0.18) 0%, transparent 60%)',
+                transform: 'translate(30%, -40%)',
+              }}
+            />
+            <div
+              className="absolute bottom-0 left-0 w-96 h-96 rounded-full pointer-events-none"
+              style={{
+                background:
+                  'radial-gradient(circle, rgba(96,165,250,0.25) 0%, transparent 60%)',
+                transform: 'translate(-30%, 40%)',
+              }}
+            />
 
-      <div className="relative max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-        <h2 className="text-3xl sm:text-4xl font-bold text-white mb-4">
-          Ready to unlock Infinity Space?
-        </h2>
-        <p className="text-lg text-blue-100 mb-10 max-w-xl mx-auto">
-          Download the latest Android APK and start organizing your private chats with Infinity Space.
-        </p>
-        <div className="flex justify-center">
-          <a href={apkDownloadHref} className="btn-white-cta">
-            <Download size={18} />
-            Download APK
-          </a>
-        </div>
+            <div className="relative">
+              <span className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-semibold bg-white/15 backdrop-blur-sm text-white border border-white/25 mb-7">
+                <span className="w-1.5 h-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                Available now · Free for everyone
+              </span>
+
+              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-6 tracking-tight leading-[1.05]">
+                Ready for messaging
+                <br />
+                that's actually private?
+              </h2>
+              <p className="text-lg sm:text-xl text-blue-100 mb-10 max-w-xl mx-auto leading-relaxed">
+                Join thousands taking their conversations back. Download Subtext and start chatting on your terms.
+              </p>
+
+              <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                <a
+                  href={apkDownloadHref}
+                  className="inline-flex items-center justify-center gap-2 px-7 py-3.5 rounded-full bg-white text-brand-blue font-semibold text-base hover:scale-[1.03] active:scale-[0.97] transition-transform shadow-[0_12px_28px_-8px_rgba(0,0,0,0.25)]"
+                >
+                  <Download size={18} />
+                  Download for Android
+                </a>
+                <a
+                  href="#features"
+                  className="inline-flex items-center justify-center gap-1.5 text-white/90 font-semibold text-base hover:text-white hover:gap-3 transition-all px-2"
+                >
+                  Learn more
+                  <ArrowRight size={16} />
+                </a>
+              </div>
+
+              <p className="mt-6 text-xs text-blue-200">
+                No account needed to try · Free forever · No tracking
+              </p>
+            </div>
+          </div>
+        </Reveal>
       </div>
     </section>
   )

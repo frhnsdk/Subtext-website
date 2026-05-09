@@ -12,24 +12,23 @@ export default function FeatureCard({
   icon: Icon,
   title,
   description,
-  iconBg = 'rgba(37,99,235,0.1)',
+  iconBg = '#EFF6FF',
   iconColor = '#2563EB',
 }: FeatureCardProps) {
   return (
     <div
-      className="group bg-brand-dark-card rounded-2xl p-6 border border-white/10 transition-all duration-300 hover:-translate-y-1.5 hover:border-brand-blue/40"
-      style={{ boxShadow: '0 8px 24px rgba(0,0,0,0.28)' }}
+      className="group card-lift bg-white rounded-3xl p-7 border border-slate-200 hover:border-brand-blue/40 hover:shadow-[0_20px_40px_-12px_rgba(37,99,235,0.15)]"
+      style={{ boxShadow: '0 1px 3px rgba(15,23,42,0.04)' }}
     >
-      {/* Icon container */}
       <div
-        className="inline-flex items-center justify-center w-12 h-12 rounded-xl mb-4 transition-transform duration-300 group-hover:scale-110"
+        className="inline-flex items-center justify-center w-12 h-12 rounded-2xl mb-5 transition-transform duration-300 group-hover:scale-110 group-hover:rotate-3"
         style={{ background: iconBg, color: iconColor }}
       >
-        <Icon size={22} strokeWidth={1.8} />
+        <Icon size={22} strokeWidth={2} />
       </div>
 
-      <h3 className="text-base font-semibold text-white mb-2">{title}</h3>
-      <p className="text-sm text-gray-300 leading-relaxed">{description}</p>
+      <h3 className="text-lg font-bold text-brand-ink mb-2 tracking-tight">{title}</h3>
+      <p className="text-sm text-slate-600 leading-relaxed">{description}</p>
     </div>
   )
 }

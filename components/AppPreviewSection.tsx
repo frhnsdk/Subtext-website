@@ -1,213 +1,170 @@
 'use client'
 
-import { useState } from 'react'
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { Shield, Lock, UserCheck, MessageCircle, Users, UserCircle } from 'lucide-react'
+import Reveal from './Reveal'
 
-const previews = [
-  { id: 1, src: '/App Screenshot/Screenshot 2026-05-04 182056.png', alt: 'App preview 1' },
-  { id: 2, src: '/App Screenshot/Screenshot 2026-05-04 182151.png', alt: 'App preview 2' },
-  { id: 3, src: '/App Screenshot/Screenshot 2026-05-04 182248.png', alt: 'App preview 3' },
-  { id: 4, src: '/App Screenshot/Screenshot 2026-05-04 182325.png', alt: 'App preview 4' },
-  { id: 5, src: '/App Screenshot/Screenshot 2026-05-04 182437.png', alt: 'App preview 5' },
-  { id: 6, src: '/App Screenshot/Screenshot 2026-05-04 185615.png', alt: 'App preview 6' },
+const features = [
+  {
+    icon: MessageCircle,
+    label: 'Messaging',
+    title: 'Conversations that feel effortless',
+    description:
+      'A clean, fast chat experience designed to get out of your way. Send messages, react with emojis, reply with quoted bubbles — everything just works.',
+    src: '/App Screenshot/Screenshot 2026-05-04 182437.png',
+    alt: 'Chat screen',
+    accent: '#2563EB',
+  },
+  {
+    icon: Lock,
+    label: 'Infinity Space',
+    title: 'A private space hidden in plain sight',
+    description:
+      'Lock part of your app behind a password only you know. Tap, type, and slip into a separate world of conversations the moment you need privacy.',
+    src: '/App Screenshot/Screenshot 2026-05-04 182151.png',
+    alt: 'Flip Space screen',
+    accent: '#9333EA',
+  },
+  {
+    icon: UserCheck,
+    label: 'Permissions',
+    title: 'You decide who reaches you',
+    description:
+      'Nobody can message you without sending a request first. Approve who gets through. No spam, no strangers, no surprises.',
+    src: '/App Screenshot/Screenshot 2026-05-04 182248.png',
+    alt: 'Send chat request screen',
+    accent: '#10B981',
+  },
+  {
+    icon: Shield,
+    label: 'Trust & Safety',
+    title: 'Every chat, fully encrypted',
+    description:
+      'See exactly who you\'re talking to. End-to-end encryption status visible at a glance. Block any contact in a single tap.',
+    src: '/App Screenshot/Screenshot 2026-05-04 182325.png',
+    alt: 'User info screen',
+    accent: '#F59E0B',
+  },
+  {
+    icon: Users,
+    label: 'Groups',
+    title: 'Private groups, your way',
+    description:
+      'Create a group with the people you trust. Same encryption, same privacy — now with everyone you love in one place.',
+    src: '/App Screenshot/Screenshot 2026-05-04 185615.png',
+    alt: 'Create group screen',
+    accent: '#DB2777',
+  },
+  {
+    icon: UserCircle,
+    label: 'Your profile',
+    title: 'Full control, always at hand',
+    description:
+      'Manage your identity, switch between dark and light, toggle visibility, and review blocked contacts — all in one place.',
+    src: '/App Screenshot/Screenshot 2026-05-04 182056.png',
+    alt: 'Profile screen',
+    accent: '#6366F1',
+  },
 ]
 
 export default function AppPreviewSection() {
-  const [activeIndex, setActiveIndex] = useState(0)
-
-  const goToPrevious = () =>
-    setActiveIndex((prev) => (prev === 0 ? previews.length - 1 : prev - 1))
-  const goToNext = () =>
-    setActiveIndex((prev) => (prev === previews.length - 1 ? 0 : prev + 1))
-
-  const prevIndex = activeIndex === 0 ? previews.length - 1 : activeIndex - 1
-  const nextIndex = activeIndex === previews.length - 1 ? 0 : activeIndex + 1
-
   return (
-    <section id="app-preview" className="section-pad bg-brand-dark relative overflow-hidden">
-      {/* Background glows */}
-      <div
-        className="absolute inset-0 pointer-events-none"
-        style={{
-          background:
-            'radial-gradient(ellipse 70% 55% at 50% 100%, rgba(16,185,129,0.14) 0%, transparent 65%), radial-gradient(ellipse 50% 40% at 50% 0%, rgba(37,99,235,0.10) 0%, transparent 70%)',
-        }}
-      />
-      {/* Grid overlay */}
-      <div
-        className="absolute inset-0 pointer-events-none opacity-[0.05]"
-        style={{
-          backgroundImage:
-            'linear-gradient(rgba(255,255,255,0.5) 1px, transparent 1px), linear-gradient(90deg, rgba(255,255,255,0.5) 1px, transparent 1px)',
-          backgroundSize: '48px 48px',
-          maskImage: 'radial-gradient(ellipse 60% 60% at 50% 50%, black 30%, transparent 80%)',
-        }}
-      />
-
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <section
+      id="app-preview"
+      className="bg-white relative overflow-hidden"
+    >
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
-        <div className="text-center mb-14 md:mb-20">
-          <span className="text-xs font-bold tracking-widest uppercase text-brand-green">
-            App Preview
-          </span>
-          <h2 className="mt-3 text-3xl sm:text-4xl md:text-5xl font-bold text-white">
-            See Subtext in <span className="gradient-text">action</span>
-          </h2>
-          <p className="mt-4 text-lg text-gray-300 max-w-2xl mx-auto">
-            Experience the clean, intuitive interface designed for secure and private messaging.
-          </p>
-        </div>
-
-        {/* Carousel stage */}
-        <div className="relative">
-          <div className="relative flex justify-center items-center gap-6 md:gap-10 lg:gap-14">
-            {/* Side peek - previous (hidden on small) */}
-            <button
-              onClick={goToPrevious}
-              aria-label="Previous preview"
-              className="hidden lg:block relative shrink-0 group"
-            >
-              <PhoneFrame
-                src={previews[prevIndex].src}
-                alt={previews[prevIndex].alt}
-                size="sm"
-                dim
-              />
-            </button>
-
-            {/* Main phone */}
-            <div className="relative shrink-0">
-              {/* Outer glow */}
-              <div
-                className="absolute -inset-8 rounded-[3rem] pointer-events-none"
-                style={{
-                  background:
-                    'radial-gradient(ellipse 60% 60% at 50% 50%, rgba(37,99,235,0.35) 0%, transparent 70%)',
-                  filter: 'blur(30px)',
-                }}
-              />
-              <PhoneFrame
-                key={previews[activeIndex].id}
-                src={previews[activeIndex].src}
-                alt={previews[activeIndex].alt}
-                size="lg"
-              />
-            </div>
-
-            {/* Side peek - next */}
-            <button
-              onClick={goToNext}
-              aria-label="Next preview"
-              className="hidden lg:block relative shrink-0 group"
-            >
-              <PhoneFrame
-                src={previews[nextIndex].src}
-                alt={previews[nextIndex].alt}
-                size="sm"
-                dim
-              />
-            </button>
+        <Reveal>
+          <div className="text-center pt-24 md:pt-32 pb-16 md:pb-24 max-w-3xl mx-auto">
+            <span className="text-xs font-bold tracking-[0.18em] uppercase text-brand-blue">
+              How it works
+            </span>
+            <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-brand-ink tracking-tight leading-[1.1]">
+              Designed for the way you{' '}
+              <span className="gradient-text">actually chat.</span>
+            </h2>
+            <p className="mt-5 text-lg text-slate-600 leading-relaxed">
+              Every screen in Subtext is built around one promise: the simplest, cleanest, most private messaging experience you've ever used.
+            </p>
           </div>
+        </Reveal>
 
-          {/* Nav buttons (mobile/tablet) */}
-          <button
-            onClick={goToPrevious}
-            aria-label="Previous preview"
-            className="lg:hidden absolute left-2 sm:left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 backdrop-blur-md text-white/80 hover:text-white hover:bg-white/10 transition border border-white/10"
-          >
-            <ChevronLeft size={22} />
-          </button>
-          <button
-            onClick={goToNext}
-            aria-label="Next preview"
-            className="lg:hidden absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/5 backdrop-blur-md text-white/80 hover:text-white hover:bg-white/10 transition border border-white/10"
-          >
-            <ChevronRight size={22} />
-          </button>
+        {/* Feature rows */}
+        <div className="flex flex-col">
+          {features.map((feature, i) => {
+            const isEven = i % 2 === 0
+            const Icon = feature.icon
+            return (
+              <Reveal key={feature.label}>
+                <div
+                  className={`flex flex-col items-center gap-12 lg:gap-20 py-14 md:py-20 ${
+                    isEven ? 'md:flex-row' : 'md:flex-row-reverse'
+                  }`}
+                >
+                  {/* Text side */}
+                  <div className="flex-1 flex flex-col gap-5 text-center md:text-left max-w-lg">
+                    <div className="flex items-center gap-2.5 justify-center md:justify-start">
+                      <div
+                        className="p-2.5 rounded-xl"
+                        style={{
+                          background: `${feature.accent}15`,
+                          color: feature.accent,
+                        }}
+                      >
+                        <Icon size={20} strokeWidth={2.2} />
+                      </div>
+                      <span
+                        className="text-xs font-bold tracking-[0.18em] uppercase"
+                        style={{ color: feature.accent }}
+                      >
+                        {feature.label}
+                      </span>
+                    </div>
+                    <h3 className="text-3xl sm:text-4xl font-bold text-brand-ink leading-tight tracking-tight">
+                      {feature.title}
+                    </h3>
+                    <p className="text-slate-600 text-lg leading-relaxed">
+                      {feature.description}
+                    </p>
+                  </div>
+
+                  {/* Screenshot side */}
+                  <div className="flex-1 flex justify-center">
+                    <div className="relative">
+                      {/* Soft accent glow */}
+                      <div
+                        className="absolute -inset-12 pointer-events-none"
+                        style={{
+                          background: `radial-gradient(ellipse 60% 60% at 50% 50%, ${feature.accent}25 0%, transparent 70%)`,
+                          filter: 'blur(40px)',
+                        }}
+                      />
+                      {/* Subtle dotted accent */}
+                      <div
+                        className="absolute -top-4 -right-4 w-20 h-20 rounded-full opacity-20 hidden md:block"
+                        style={{
+                          backgroundImage: `radial-gradient(circle at 1px 1px, ${feature.accent} 1px, transparent 0)`,
+                          backgroundSize: '12px 12px',
+                        }}
+                      />
+                      <img
+                        src={feature.src}
+                        alt={feature.alt}
+                        className="relative w-[230px] sm:w-[260px] rounded-3xl border border-slate-200"
+                        style={{
+                          boxShadow: '0 30px 60px -20px rgba(15,23,42,0.25)',
+                        }}
+                      />
+                    </div>
+                  </div>
+                </div>
+              </Reveal>
+            )
+          })}
         </div>
 
-        {/* Thumbnail strip */}
-        <div className="mt-12 flex justify-center">
-          <div className="flex gap-3 p-2 rounded-2xl bg-white/3 border border-white/10 backdrop-blur-sm overflow-x-auto max-w-full">
-            {previews.map((p, i) => (
-              <button
-                key={p.id}
-                onClick={() => setActiveIndex(i)}
-                aria-label={`Go to preview ${i + 1}`}
-                className={`relative shrink-0 w-14 h-24 sm:w-16 sm:h-28 rounded-xl overflow-hidden border transition-all ${
-                  i === activeIndex
-                    ? 'border-brand-blue ring-2 ring-brand-blue/40 scale-105'
-                    : 'border-white/10 opacity-60 hover:opacity-100 hover:border-white/30'
-                }`}
-              >
-                <img
-                  src={p.src}
-                  alt={p.alt}
-                  className="w-full h-full object-cover"
-                />
-              </button>
-            ))}
-          </div>
-        </div>
-
-        {/* Counter */}
-        <div className="mt-6 text-center text-sm text-gray-400 tabular-nums">
-          <span className="text-white font-semibold">
-            {String(activeIndex + 1).padStart(2, '0')}
-          </span>
-          <span className="mx-1.5 text-gray-600">/</span>
-          <span>{String(previews.length).padStart(2, '0')}</span>
-        </div>
+        <div className="pb-20" />
       </div>
     </section>
-  )
-}
-
-function PhoneFrame({
-  src,
-  alt,
-  size,
-  dim = false,
-}: {
-  src: string
-  alt: string
-  size: 'sm' | 'lg'
-  dim?: boolean
-}) {
-  const dims =
-    size === 'lg'
-      ? 'w-[260px] sm:w-[280px] md:w-[300px]'
-      : 'w-[180px] xl:w-[200px]'
-
-  return (
-    <div
-      className={`relative ${dims} aspect-9/19.5 rounded-[2.5rem] p-1.5 bg-linear-to-b from-white/15 via-white/5 to-white/10 transition-transform duration-500 ${
-        dim ? 'opacity-50 scale-95 hover:opacity-80 hover:scale-100' : ''
-      }`}
-      style={{
-        boxShadow:
-          size === 'lg'
-            ? '0 30px 80px rgba(0,0,0,0.6), 0 0 0 1px rgba(255,255,255,0.08), inset 0 1px 0 rgba(255,255,255,0.15)'
-            : '0 15px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(255,255,255,0.06)',
-      }}
-    >
-      <div className="relative w-full h-full rounded-[2.1rem] overflow-hidden bg-black">
-        {/* Screenshot */}
-        <img
-          src={src}
-          alt={alt}
-          className="w-full h-full object-cover animate-fade-in"
-        />
-        {/* Top notch */}
-        <div className="absolute top-2 left-1/2 -translate-x-1/2 w-[38%] h-5.5 bg-black rounded-full z-10" />
-        {/* Subtle inner highlight */}
-        <div
-          className="absolute inset-0 pointer-events-none rounded-[2.1rem]"
-          style={{
-            boxShadow: 'inset 0 1px 1px rgba(255,255,255,0.12), inset 0 -20px 60px rgba(0,0,0,0.3)',
-          }}
-        />
-      </div>
-    </div>
   )
 }
