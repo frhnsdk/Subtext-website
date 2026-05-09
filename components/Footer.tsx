@@ -4,7 +4,7 @@ const apkDownloadHref = process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL || '#'
 
 const links = {
   Product: [
-    { label: 'Features', href: '#features' },
+    { label: 'Spaces', href: '#features' },
     { label: 'How it works', href: '#app-preview' },
     { label: 'Privacy', href: '#privacy' },
     { label: 'Download', href: apkDownloadHref },

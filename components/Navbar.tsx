@@ -4,7 +4,7 @@ import { useEffect, useState } from 'react'
 import { Menu, X, Download } from 'lucide-react'
 
 const navLinks = [
-  { label: 'Features', href: '#features' },
+  { label: 'Spaces', href: '#features' },
   { label: 'How it works', href: '#app-preview' },
   { label: 'Privacy', href: '#privacy' },
 ]

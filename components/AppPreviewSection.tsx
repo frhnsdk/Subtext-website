@@ -19,7 +19,7 @@ const features = [
     label: 'Infinity Space',
     title: 'A private space hidden in plain sight',
     description:
-      'Lock part of your app behind a password only you know. Tap, type, and slip into a separate world of conversations the moment you need privacy.',
+      'One password flip and you\'re in a completely separate world. Your real chats vanish — replaced by a decoy space that looks normal. If someone forces you to unlock your phone, they see nothing that can hurt you.',
     src: '/App Screenshot/Screenshot 2026-05-04 182151.png',
     alt: 'Flip Space screen',
     accent: '#9333EA',
@@ -80,11 +80,11 @@ export default function AppPreviewSection() {
               How it works
             </span>
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-brand-ink tracking-tight leading-[1.1]">
-              Designed for the way you{' '}
-              <span className="gradient-text">actually chat.</span>
+              One tap to{' '}
+              <span className="gradient-text">disappear.</span>
             </h2>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              Every screen in Subtext is built around one promise: the simplest, cleanest, most private messaging experience you've ever used.
+              Subtext lets you flip between spaces instantly. If someone grabs your phone, they see a completely different app — your real chats stay hidden, locked, and safe.
             </p>
           </div>
         </Reveal>

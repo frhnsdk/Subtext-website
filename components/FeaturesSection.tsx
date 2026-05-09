@@ -64,14 +64,14 @@ export default function FeaturesSection() {
         <Reveal>
           <div className="text-center mb-14 md:mb-20 max-w-3xl mx-auto">
             <span className="text-xs font-bold tracking-[0.18em] uppercase text-brand-blue">
-              Features
+              Spaces
             </span>
             <h2 className="mt-4 text-3xl sm:text-4xl md:text-5xl font-bold text-brand-ink tracking-tight leading-[1.1]">
-              Everything you need to{' '}
-              <span className="gradient-text">talk freely.</span>
+              Built to keep you{' '}
+              <span className="gradient-text">safe in real life.</span>
             </h2>
             <p className="mt-5 text-lg text-slate-600 leading-relaxed">
-              A messenger built around the simple idea that your conversations belong to you — not to advertisers, governments, or anyone else.
+              Subtext was built for people in danger. Multiple spaces hide your chats — so even if someone takes your phone, they find nothing.
             </p>
           </div>
         </Reveal>
