@@ -9,7 +9,7 @@ const navLinks = [
   { label: 'Privacy', href: '#privacy' },
 ]
 
-const apkDownloadHref = process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL || '#'
+const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/app-release.apk'
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)

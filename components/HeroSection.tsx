@@ -9,7 +9,7 @@ const PhoneConnection = dynamic(() => import('./PhoneConnection'), {
   loading: () => null,
 })
 
-const apkDownloadHref = process.env.NEXT_PUBLIC_APK_DOWNLOAD_URL || '#'
+const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/app-release.apk'
 
 export default function HeroSection() {
   return (
