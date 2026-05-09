@@ -1,6 +1,7 @@
 import Navbar from '@/components/Navbar'
 import InfinityCursor from '@/components/InfinityCursor'
 import HeroSection from '@/components/HeroSection'
+import NewsTicker from '@/components/NewsTicker'
 import FeaturesSection from '@/components/FeaturesSection'
 import AppPreviewSection from '@/components/AppPreviewSection'
 import PrivacySection from '@/components/PrivacySection'
@@ -13,6 +14,7 @@ export default function Home() {
       <InfinityCursor />
       <Navbar />
       <HeroSection />
+      <NewsTicker />
       <FeaturesSection />
       <AppPreviewSection />
       <PrivacySection />
