@@ -1,7 +1,7 @@
 import { Download, ArrowRight } from 'lucide-react'
 import Reveal from './Reveal'
 
-const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/app-release.apk'
+const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/subtext.apk'
 
 export default function CTABanner() {
   return (

@@ -9,7 +9,7 @@ const PhoneConnection = dynamic(() => import('./PhoneConnection'), {
   loading: () => null,
 })
 
-const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/app-release.apk'
+const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/subtext.apk'
 
 export default function HeroSection() {
   return (
@@ -83,7 +83,7 @@ export default function HeroSection() {
             <div className="flex flex-col sm:flex-row gap-3 items-center">
               <a href={apkDownloadHref} className="btn-primary">
                 <Download size={18} />
-                Download for Android
+                Download Subtext
               </a>
               <a href="#features" className="btn-secondary">
                 See how it works

@@ -1,6 +1,6 @@
 import { Download } from 'lucide-react'
 
-const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/app-release.apk'
+const apkDownloadHref = 'https://github.com/frhnsdk/Subtext-website/releases/download/tag-1/subtext.apk'
 
 const links = {
   Product: [
